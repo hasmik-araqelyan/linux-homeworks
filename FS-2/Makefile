@@ -1,10 +1,10 @@
-all: simple-copy
+all: read-file
 
-simple-copy: simple-copy.o
-	g++ simple-copy.o -o simple-copy
+read-file: read-file.o
+	g++ read-file.o -o read-file
 
-simple-copy.o: simple-copy.cpp
-	g++ -c simple-copy.cpp
+read-file.o: read-file.cpp
+	g++ -c read-file.cpp
 
 clean:
-	rm *-o simple-copy
+	rm *-o read-file
