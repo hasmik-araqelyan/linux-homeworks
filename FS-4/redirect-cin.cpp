@@ -34,17 +34,11 @@ void initialize(int argc, char** argv){
 }
 
 int main(int argc, char** argv){
-    //
-    
     initialize(argc, argv);
-
-    //
 
     std::string input;
     std::cin >> input;
-    //ssize_t size = input.size();
 
-    //
     std::string reversed;
 
     for(int i = input.length(); i >= 0; --i){
