@@ -9,6 +9,7 @@
 
 #define bufferSize 10
 int main(int argc, char** argv){
+    // File path check
     if(argc < 2){
         std::cerr << "Error: Please provide the file path" << std::endl;
         exit(1);
@@ -16,8 +17,10 @@ int main(int argc, char** argv){
 
     char* openFile = argv[1];
 
+    // Open file
     int openFd = open(openFile, O_RDWR);
 
+    // Checking to open the file correctly
     if(openFd < 0){
         std::cerr << strerror(errno) << std::endl;
         exit(errno);
@@ -47,6 +50,7 @@ int main(int argc, char** argv){
         cur = cur + writeBytes;
     }
 
+    // Remove the file
     ssize_t del = unlink(openFile);
     if(del < 0){
         std::cerr << strerror(errno) << std::endl;
